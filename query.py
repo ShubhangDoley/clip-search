@@ -5,7 +5,7 @@ import torch
 import open_clip
 import faiss
 
-def search_index(query_text, top_k=5, index_path="image_index.faiss", paths_path="paths.npy", model_name="ViT-B-32", pretrained="openai"):
+def search_index(query_text, top_k=10, index_path="image_index.faiss", paths_path="paths.npy", model_name="ViT-B-32", pretrained="openai"):
     if not os.path.exists(index_path) or not os.path.exists(paths_path):
         print(f"Error: Index file '{index_path}' or paths file '{paths_path}' not found.")
         print("Please run 'build_index.py' first.")
